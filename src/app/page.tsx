@@ -1,102 +1,196 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      {/* Header */}
+      <header className="bg-white/80 backdrop-blur-sm shadow-sm border-b border-blue-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                <span className="text-xl">✨</span>
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Lumina Restauris
+                </h1>
+                <p className="text-sm text-gray-600">Painel Terapêutico Quântico</p>
+              </div>
+            </div>
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all duration-300">
+              Acessar Painel
+            </button>
+          </div>
+        </div>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Hero Section */}
+        <div className="text-center mb-20">
+          <div className="mb-8">
+            <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <span className="text-4xl">🔮</span>
+            </div>
+          </div>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            Transforme sua 
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> prática terapêutica</span>
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            O Lumina Restauris é um painel avançado que integra tecnologia quântica com terapias modernas, 
+            oferecendo aos terapeutas uma plataforma completa para gestão de pacientes e análises energéticas.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              🚀 Começar Agora
+            </button>
+            <button className="border-2 border-blue-300 text-blue-700 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300">
+              📖 Saiba Mais
+            </button>
+          </div>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
+          {/* Gestão de Pacientes */}
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100">
+            <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6">
+              <span className="text-2xl">👥</span>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Gestão de Pacientes</h3>
+            <p className="text-gray-600 mb-6">
+              Sistema completo para cadastro, acompanhamento e histórico de pacientes com interface intuitiva e segura.
+            </p>
+            <ul className="space-y-2 text-gray-600">
+              <li className="flex items-center">
+                <span className="text-green-500 mr-2">✓</span>
+                Prontuários digitais seguros
+              </li>
+              <li className="flex items-center">
+                <span className="text-green-500 mr-2">✓</span>
+                Histórico completo de sessões
+              </li>
+              <li className="flex items-center">
+                <span className="text-green-500 mr-2">✓</span>
+                Agendamento inteligente
+              </li>
+            </ul>
+          </div>
+
+          {/* Análises Quânticas */}
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100">
+            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6">
+              <span className="text-2xl">⚡</span>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Análises Quânticas</h3>
+            <p className="text-gray-600 mb-6">
+              Ferramentas avançadas para análise energética e acompanhamento da evolução terapêutica dos pacientes.
+            </p>
+            <ul className="space-y-2 text-gray-600">
+              <li className="flex items-center">
+                <span className="text-purple-500 mr-2">✓</span>
+                Medições de campos energéticos
+              </li>
+              <li className="flex items-center">
+                <span className="text-purple-500 mr-2">✓</span>
+                Relatórios automáticos
+              </li>
+              <li className="flex items-center">
+                <span className="text-purple-500 mr-2">✓</span>
+                Gráficos de evolução
+              </li>
+            </ul>
+          </div>
+
+          {/* Dashboard Inteligente */}
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100">
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6">
+              <span className="text-2xl">📊</span>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Dashboard Inteligente</h3>
+            <p className="text-gray-600 mb-6">
+              Visão centralizada de todas as atividades, métricas e insights para otimizar sua prática terapêutica.
+            </p>
+            <ul className="space-y-2 text-gray-600">
+              <li className="flex items-center">
+                <span className="text-blue-500 mr-2">✓</span>
+                Métricas em tempo real
+              </li>
+              <li className="flex items-center">
+                <span className="text-blue-500 mr-2">✓</span>
+                Insights personalizados
+              </li>
+              <li className="flex items-center">
+                <span className="text-blue-500 mr-2">✓</span>
+                Relatórios detalhados
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-12 shadow-lg border border-blue-100 mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Transformando Vidas com Tecnologia</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Junte-se a centenas de terapeutas que já utilizam o Lumina Restauris para potencializar seus resultados
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">125+</div>
+              <div className="text-gray-600">Terapeutas Ativos</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2">2.5K+</div>
+              <div className="text-gray-600">Pacientes Atendidos</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-2">15K+</div>
+              <div className="text-gray-600">Análises Realizadas</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">98%</div>
+              <div className="text-gray-600">Satisfação</div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-white">
+          <h2 className="text-3xl font-bold mb-4">Pronto para revolucionar sua prática?</h2>
+          <p className="text-xl mb-8 opacity-90">
+            Experimente o Lumina Restauris e descubra o poder da terapia quântica moderna
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              🔮 Acessar Painel Gratuito
+            </button>
+            <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
+              📞 Falar com Especialista
+            </button>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-3 mb-6">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <span className="text-lg">✨</span>
+              </div>
+              <span className="text-xl font-bold">Lumina Restauris</span>
+            </div>
+            <p className="text-gray-400 mb-4">
+              Transformando a prática terapêutica com a força da tecnologia quântica
+            </p>
+            <p className="text-gray-500 text-sm">
+              © 2025 Lumina Restauris. Todos os direitos reservados.
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );
